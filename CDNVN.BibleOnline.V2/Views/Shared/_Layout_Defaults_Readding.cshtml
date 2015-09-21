@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="@Url.Content("~/Themes/Defaults/css/bootstrap.min.css")">
+    <link href='https://fonts.googleapis.com/css?family=Lobster|Noticia+Text:400,400italic,700,700italic&subset=latin,vietnamese,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/Themes/Defaults/style.css")">
+    <script type="text/javascript" src="@Url.Content("~/Themes/Defaults/js/jquery.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Themes/Defaults/js/jquery.mobile.custom.min.js")"></script>
+    @*@Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")*@
+    @RenderSection("styles",required:false)
+
+
+></head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                </button>
+                <a class="navbar-brand" href="#"><img src="@Url.Content("~/Themes/Defaults/images/logo.svg")" alt=""></a>
+                <a class="navbar-brand nav-bar-modal" data-toggle='modal' data-target='.bs-example-modal-lg'><i class="fa fa-angle-down"></i></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="input-group search">
+                        <input type="text" data-placement="bottom" data-toggle="popover" data-trigger="focus" title="" data-content="<button type='button' class='btn btn-danger' data-toggle='modal' data-target='.bs-example-modal-lg'><i class='fa fa-book'></i> Chọn sách</button>" data-original-title="Đọc Kinh Thánh" name="q" class="form-control query" placeholder="Bạn muốn đọc điều gì?">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-search" type="button"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div><!-- /input-group -->
+                </form>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Trang chủ</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Học Kinh Thánh <span class="fa fa-angle-down"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Đọc Kinh Thánh</a></li>
+                            <li><a href="#">Lời Hằng Sống</a></li>
+                            <li><a href="#">Lịch Học Kinh Thánh</a></li>
+                            <li><a href="#"></a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="col-md-12">
+                <div class="col-md-3 info">
+                    <a href="#"><img src="http://cdnvn.com/Themes/Default/img/logo.png" alt=""></a>
+                    <p class="desc">Cộng đồng Cơ Đốc Nhân Việt Nam chia sẻ tình yêu thương của Chúa Cứu Thế Giê-xu.</p>
+                    <p class="social">
+                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="google"><i class="fa fa-google"></i></a>
+                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+                    </p>
+                </div><!-- /col-md-3 -->
+                <div class="col-md-6">
+                    <div class="page-header">
+                        <h2>Chuyên Mục</h2>
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                        <ul>
+                            <li><a href="#">Dưỡng Linh</a></li>
+                            <li><a href="#">Nhạc Thánh</a></li>
+                            <li><a href="#">Tin Tức</a></li>
+                        </ul>
+                    </div><!-- /col-md-3 -->
+                    <div class="col-md-6 col-xs-6">
+                        <ul>
+                            <li><a href="#">Phim Cơ Đốc</a></li>
+                            <li><a href="#">Giảng Luận</a></li>
+                            <li><a href="#">Hình Ảnh</a></li>
+                        </ul>
+                    </div><!-- /col-md-3 -->
+                </div><!-- /col-md-6 -->
+                <div class="col-md-3">
+                    <div class="page-header">
+                        <h2>Di Động</h2>
+                    </div>
+                    <div class="mobile">
+                        <a href="#" class="apple"><i class="fa fa-apple"></i></a>
+                        <a href="#" class="android"><i class="fa fa-android"></i></a>
+                        <a href="#" class="windows"><i class="fa fa-windows"></i></a>
+                    </div>
+                </div><!-- /col-md-3 -->
+            </div><!-- /col-md-12 -->
+
+        </div><!-- /container -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="col-md-12">
+                    <p class="copyright">© 2015 CDNVN.com All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer><!-- /footer -->
+
+
+    <div class="home-control-menu">
+        <ul>
+            <li><a href="#home-search" class="search"><i class="fa fa-search"></i></a></li>
+            <li><a href="#home-verse" class="verse"><i class="fa fa-bookmark"></i></a></li>
+            <li><a href="#home-study" class="study"><i class="fa fa-book"></i></a></li>
+            <li><a href="#home-calendar" class="calendar"><i class="fa fa-calendar"></i></a></li>
+            <li><a href="#" class="main"><i class="fa fa-plus"></i></a></li>
+        </ul>
+    </div>
+
+    <!-- show bible list -->
+    <div id="bible-choose-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <ul id="bible-choose-tab" class="nav nav-pills">
+                        <li role="presentation" class="active"><a data-toggle="pill" href="#books">Chọn Sách</a></li>
+                        <li role="presentation"><a data-toggle="pill" href="#chapters">Chọn Đoạn</a></li>
+                    </ul>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="tab-content">
+                            <div id="books" class="tab-pane fade in active">
+                                <div class="book-list row">
+                                    <span class="title">Cựu ước</span>
+                                    <ul>
+                                        <li data-chapters="50"><a href="#">Sáng-thế Ký</a></li>
+                                        <li data-chapters="40"><a href="#">Xuất Ê-díp-tô Ký</a></li>
+                                        <li data-chapters="27"><a href="#">Lê-vi Ký</a></li>
+                                        <li data-chapters="36"><a href="#">Dân-số Ký</a></li>
+                                        <li data-chapters="34"><a href="#">Phục-truyền Luật-lệ Ký</a></li>
+                                        <li data-chapters="24"><a href="#">Giô-suê</a></li>
+                                        <li data-chapters="21"><a href="#">Các Quan Xét</a></li>
+                                        <li data-chapters="4"><a href="#">Ru-tơ</a></li>
+                                        <li data-chapters="31"><a href="#">1 Sa-mu-ên</a></li>
+                                        <li data-chapters="24"><a href="#">2 Sa-mu-ên</a></li>
+                                        <li data-chapters="22"><a href="#">1 Các Vua</a></li>
+                                        <li data-chapters="25"><a href="#">2 Các Vua</a></li>
+                                        <li data-chapters="29"><a href="#">1 Sử-ký</a></li>
+                                        <li data-chapters="36"><a href="#">2 Sử-ký</a></li>
+                                        <li data-chapters="10"><a href="#">Ê-xơ-ra</a></li>
+                                        <li data-chapters="13"><a href="#">Nê-hê-mi</a></li>
+                                        <li data-chapters="10"><a href="#">Ê-xơ-tê</a></li>
+                                        <li data-chapters="42"><a href="#">Gióp</a></li>
+                                        <li data-chapters="150"><a href="#">Thi-thiên</a></li>
+                                        <li data-chapters="31"><a href="#">Châm-ngôn</a></li>
+                                        <li data-chapters="12"><a href="#">Truyền-đạo</a></li>
+                                        <li data-chapters="8"><a href="#">Nhã-ca</a></li>
+                                        <li data-chapters="66"><a href="#">Ê-sai</a></li>
+                                        <li data-chapters="52"><a href="#">Giê-rê-mi</a></li>
+                                        <li data-chapters="5"><a href="#">Ca-thương</a></li>
+                                        <li data-chapters="48"><a href="#">Ê-xê-chi-ên</a></li>
+                                        <li data-chapters="12"><a href="#">Đa-ni-ên</a></li>
+                                        <li data-chapters="14"><a href="#">Ô-sê</a></li>
+                                        <li data-chapters="3"><a href="#">Giô-ên</a></li>
+                                        <li data-chapters="9"><a href="#">A-mốt</a></li>
+                                        <li data-chapters="1"><a href="#">Áp-đia</a></li>
+                                        <li data-chapters="4"><a href="#">Giô-na</a></li>
+                                        <li data-chapters="7"><a href="#">Mi-chê</a></li>
+                                        <li data-chapters="3"><a href="#">Na-hum</a></li>
+                                        <li data-chapters="3"><a href="#">Ha-ba-cúc</a></li>
+                                        <li data-chapters="3"><a href="#">Sô-phô-ni</a></li>
+                                        <li data-chapters="2"><a href="#">A-ghê</a></li>
+                                        <li data-chapters="14"><a href="#">Xa-cha-ri</a></li>
+                                        <li data-chapters="4"><a href="#">Ma-la-chi</a></li>
+                                    </ul>
+                                </div>
+                                <div class="book-list row">
+                                    <span class="title">Tân ước</span>
+                                    <ul>
+                                        <li data-chapters="28"><a href="#">Ma-thi-ơ</a></li>
+                                        <li data-chapters="16"><a href="#">Mác</a></li>
+                                        <li data-chapters="24"><a href="#">Lu-ca</a></li>
+                                        <li data-chapters="21"><a href="#">Giăng</a></li>
+                                        <li data-chapters="28"><a href="#">Công-vụ các Sứ-đồ</a></li>
+                                        <li data-chapters="16"><a href="#">Rô-ma</a></li>
+                                        <li data-chapters="16"><a href="#">1 Cô-rinh-tô</a></li>
+                                        <li data-chapters="13"><a href="#">2 Cô-rinh-tô</a></li>
+                                        <li data-chapters="6"><a href="#">Ga-la-ti</a></li>
+                                        <li data-chapters="6"><a href="#">Ê-phê-sô</a></li>
+                                        <li data-chapters="4"><a href="#">Phi-líp</a></li>
+                                        <li data-chapters="4"><a href="#">Cô-lô-se</a></li>
+                                        <li data-chapters="5"><a href="#">1 Tê-sa-lô-ni-ca</a></li>
+                                        <li data-chapters="3"><a href="#">2 Tê-sa-lô-ni-ca</a></li>
+                                        <li data-chapters="6"><a href="#">1 Ti-mô-thê</a></li>
+                                        <li data-chapters="4"><a href="#">2 Ti-mô-thê</a></li>
+                                        <li data-chapters="3"><a href="#">Tít</a></li>
+                                        <li data-chapters="1"><a href="#">Phi-lê-môn</a></li>
+                                        <li data-chapters="13"><a href="#">Hê-bơ-rơ</a></li>
+                                        <li data-chapters="5"><a href="#">Gia-cơ</a></li>
+                                        <li data-chapters="5"><a href="#">1 Phi-e-rơ</a></li>
+                                        <li data-chapters="3"><a href="#">2 Phi-e-rơ</a></li>
+                                        <li data-chapters="5"><a href="#">1 Giăng</a></li>
+                                        <li data-chapters="1"><a href="#">2 Giăng</a></li>
+                                        <li data-chapters="1"><a href="#">3 Giăng</a></li>
+                                        <li data-chapters="1"><a href="#">Giu-đe</a></li>
+                                        <li data-chapters="22"><a href="#">Khải-huyền</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="chapters" class="tab-pane fade"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Large modal -->
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="http://ricostacruz.com/jquery.transit/jquery.transit.min.js" type="text/javascript"></script>
+    <script src="@Url.Content("~/Themes/Defaults/script.js")" type="text/javascript"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

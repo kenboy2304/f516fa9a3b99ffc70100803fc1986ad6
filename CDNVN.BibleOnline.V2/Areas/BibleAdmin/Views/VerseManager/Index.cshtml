@@ -1,0 +1,66 @@
+﻿@using CDNVN.BibleOnline.V2.Data.Entities
+@model IEnumerable<CDNVN.BibleOnline.V2.Data.Entities.Verse>
+@{
+    ViewBag.Title = "Index";
+    var list = new List<Verse>();
+    var chapter = 0;
+}
+<h2>Quản lý câu Kinh Thánh</h2>
+<p><a href="@Url.Action("Create", new {version = ViewBag.Version, bookId = Request.QueryString["bookId"]})">Tạo mới</a></p>
+
+@helper ShowItemChapter(int chapter, List<Verse> list)
+{
+    <h1>@chapter</h1>
+    <table class="table table-hover">
+        <tbody>
+            @foreach (var verse in list)
+            {
+                <tr>
+                    <td style="font-weight: bold">
+                        @verse.Chapter:@verse.Id
+                    </td>
+                    <td>
+                        @verse.Content
+                    </td>
+                    <td>
+                        @verse.Double
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", new { bookId = verse.BookId, chapter = verse.Chapter, @id = verse.Id, v = ViewBag.Version })" class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@foreach (var item in Model)
+{
+    @*<p>@item.Book.Name @item.Chapter:@item.Id </p>*@
+    if (item.Chapter != chapter)
+    {
+        
+        
+        if (chapter != 0)
+        {
+            @ShowItemChapter(chapter, list)
+        }
+        chapter = item.Chapter;
+        list = new List<Verse>();
+        list.Add(item);
+    }
+    else
+    {
+        list.Add(item);
+    }
+    
+}
+
+@section styles
+{
+    <style>
+        .table td {
+            vertical-align: middle !important;
+        }
+    </style>
+}

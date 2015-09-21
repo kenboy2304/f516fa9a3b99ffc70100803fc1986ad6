@@ -1,0 +1,40 @@
+﻿@using System.Web.Mvc.Html
+@model IEnumerable<CDNVN.BibleOnline.V2.Data.Entities.Verse>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_Defaults_Readding.cshtml";
+    var chapter = 0;
+    var version = Request.QueryString["v"];
+    
+
+}
+
+<h2>@ViewBag.Address - @version</h2>
+
+@foreach (var item in Model)
+{
+    if (!string.IsNullOrWhiteSpace(item.JesusWord))
+    {
+        item.Content = item.Content.Replace(item.JesusWord, "<jesus>" + item.JesusWord + "</jesus>");
+    }
+    if (item.Chapter != chapter)
+    {
+        chapter = item.Chapter;
+        <h2>@item.Chapter</h2>
+    }
+    <verse>
+        <sup>@Html.RouteLink(item.Id.ToString(), "read5", new {fromChapter = item.Chapter, fromVerse = item.Id, v = version })</sup>
+        @Html.Raw(item.Content)    
+    </verse>
+}
+@section styles
+{
+    <style>
+        jesus {
+            color: red;
+        }
+        verse:hover {
+            border-bottom: black 1px ridge;
+        }
+    </style>
+}
